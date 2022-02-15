@@ -22,6 +22,6 @@ $router->group(['prefix' => 'api/v1'], function () use($router)
     $router->get('/products', 'ProductController@index');
     $router->get('/product/{id}', 'ProductController@show');
     $router->post('/product', 'ProductController@store');
-    $router->put('/product/{id}', 'ProductController@update');
-    $router->delete('/product/{id}', 'ProductController@delete');
+    $router->post('/product/{id}', 'ProductController@update');
+    $router->delete('/product/{id}', 'ProductController@destroy');
 });
