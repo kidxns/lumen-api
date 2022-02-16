@@ -50,19 +50,19 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        if ($request->ajax() || $request->wantsJson()) {
-            (!empty($exception->response))
-                ?
-                $code = $exception->response->getStatusCode()
-                :
-                $code = $exception->getCode();
+        // if ($request->ajax() || $request->wantsJson()) {
+        //     (!empty($exception->response))
+        //         ?
+        //         $code = $exception->response->getStatusCode()
+        //         :
+        //         $code = $exception->getCode();
 
-            return response()->json([
-                'status' => false,
-                'code' => $code,
-                'message' => $exception->getMessage()
-            ], $code);
-        }
+        //     return response()->json([
+        //         'status' => false,
+        //         'code' => $code,
+        //         'message' => $exception->getMessage()
+        //     ], $code);
+        // }
 
         if (env('APP_ENV') == 'local') {
             return parent::render($request, $exception);
