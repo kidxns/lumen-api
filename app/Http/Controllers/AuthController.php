@@ -35,18 +35,17 @@ class AuthController extends Controller
 
         try {
             $client = new Client();
-            return $client->request('POST', 'http://127.0.0.1:8000/v1/oauth/token', [
+            return $client->request('POST', config('service.passport.end_point') . '/v1/oauth/token', [
                 "form_params" => [
                     "grant_type" => "password",
-                    "client_id" => 2,
-                    "client_secret" => "i0h3mrCnUClubqouaZKHId1WkM8DHZUrXMob3m8T",
+                    "client_id" => config('service.passport.client_id'),
+                    "client_secret" => config('service.passport.client_secret'),
                     "username" => $req->email,
                     "password" => $req->password,
                     "scope" => "*"
                 ]
             ]);
         } catch (RequestException $e) {
-            dd($e);
             return response()->json(['status' => false, 'message' =>  $e->getMessage()]);
         }
     }

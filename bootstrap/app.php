@@ -19,6 +19,8 @@ date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
 |
 */
 
+
+
 $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
@@ -59,7 +61,10 @@ $app->singleton(
 |
 */
 
-$app->configure('app');
+// $app->configure('app');
+$app->configure('auth');
+$app->configure('service');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -115,6 +120,5 @@ $app->router->group([
 $app->register(App\Providers\AuthServiceProvider::class);
 $app->register(Laravel\Passport\PassportServiceProvider::class);
 $app->register(Dusterio\LumenPassport\PassportServiceProvider::class);
-$app->configure('auth');
 
 return $app;
