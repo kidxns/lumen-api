@@ -1,57 +1,55 @@
 # Lumen API,
-Lumen-Api's simple api app service. 
+
+Lumen-Api's simple api app service.
 This is a combination of Lumen Framwork and Laravel Passport.
 
 ##Installation prerequisites
-- PHP 7 + , MYSQL, and Apache.
-- Composer
-- Lumen framrowk
-- Laravel Passport
-- Postman, cUrl, Api Testing
+
+-   PHP 7 + , MYSQL, and Apache.
+-   Composer
+-   Lumen framrowk
+-   Laravel Passport
+-   Postman, cUrl, Api Testing
 
 ##How to settup the project you clone
-- cd lumen-api
-- composer install
-- coppy (window) cp (macos) .env.example .env
-- php artisan key:generate
+
+-   cd lumen-api
+-   composer install
+-   coppy (window) cp (macos) .env.example .env
+-   php artisan key:generate
 
 ##How to run
-- create new a database on locallhost
-- open .env file on the project setup enviroment configuration
-    - DB_DATABASE = database name
-    - DB_USERNAME = database user name
-    - DB_PASSWORD = database password
 
--Migrate the database
-    - `php artisan migrate`
-    - `php artisan passport:install`
-    - `php artisan db:seed`
-    - `php artisan cache:clear`
+-   create new a database on locallhost
+-   open .env file on the project setup enviroment configuration
+    -   DB_DATABASE = database name
+    -   DB_USERNAME = database user name
+    -   DB_PASSWORD = database password
 
-##Installed routes
-    - `php artisan route:list`
+-Migrate the database - `php artisan migrate` - `php artisan passport:install` - `php artisan db:seed` - `php artisan cache:clear`
 
+##Installed routes - `php artisan route:list`
 
 ##Testing Api
     ```
     *create new account*
     /auth/login
-    ```
+
     *login to get access token and refresh token*
     /auth/login
-    ```
+
     *show all products*
     /api/v1/product - GET
-    ``` 
+
     *add new product*
     /api/v1/product - POST
-    ``` 
+
     *show the product*
     /api/v1/product/{id} - GET
-    ```
+
     *update the product*
     /api/v1/product/{id} - POST
-    ```
+
     *delete*
     /api/v1/product/{id} - DELETE
     ```
