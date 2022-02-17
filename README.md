@@ -3,7 +3,7 @@
 Lumen-Api's simple api app service.
 This is a combination of Lumen Framwork and Laravel Passport.
 
-##Installation prerequisites
+## Installation prerequisites
 
 -   PHP 7 + , MYSQL, and Apache.
 -   Composer
@@ -11,14 +11,14 @@ This is a combination of Lumen Framwork and Laravel Passport.
 -   Laravel Passport
 -   Postman, cUrl, Api Testing
 
-##How to settup the project you clone
+## How to settup the project you clone
 
 -   cd lumen-api
 -   composer install
 -   coppy (window) cp (macos) .env.example .env
 -   php artisan key:generate
 
-##How to run
+## How to run
 
 -   create new a database on locallhost
 -   open .env file on the project setup enviroment configuration
@@ -26,11 +26,16 @@ This is a combination of Lumen Framwork and Laravel Passport.
     -   DB_USERNAME = database user name
     -   DB_PASSWORD = database password
 
--Migrate the database - `php artisan migrate` - `php artisan passport:install` - `php artisan db:seed` - `php artisan cache:clear`
+``` 
+php artisan migrate
+php artisan passport:install
+php artisan db:seed
+php artisan cache:clear
+```
 
-##Installed routes - `php artisan route:list`
+## Installed routes - `php artisan route:list`
 
-##Testing Api
+## Testing Api
     ```
     *create new account*
     /auth/login
