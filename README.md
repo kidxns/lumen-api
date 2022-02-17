@@ -28,12 +28,18 @@ This is a combination of Lumen Framwork and Laravel Passport.
 
 ``` 
 php artisan migrate
-php artisan passport:install
 php artisan db:seed
 php artisan cache:clear
+php artisan passport:install
+
+* Configuration client id and client secret in .env file *
+PASSPORT_CLIENT_ID= client_id
+PASSPORT_CLIENT_SECRET= client_secert.
+
 ```
 
-## Installed routes - `php artisan route:list`
+## Installed routes 
+    - `php artisan route:list`
 
 ## Testing Api
     ```
