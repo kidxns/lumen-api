@@ -31,7 +31,7 @@ class Product extends Model
     }
 
     //Find product by id
-    public static function findProductById($id)
+    public function findProductById($id)
     {
         $product = DB::table('products')->where('id', $id)->first();
         if (!empty($product)) {
