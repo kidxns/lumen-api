@@ -25,15 +25,15 @@ class Product extends Model
             'description' => 'required|string'
         ]);
         if ($validator->fails()) {
-            throw new \Exception(strval($validator), 400);
+            throw new \Exception(strval($validator->errors()), 400);
         }
         return true;
     }
 
     //Find product by id
-    public function findProductById($id)
+    public static function findProductById($id)
     {
-        $product = DB::table('products')->where('id', $id)->first();
+        $product = self::where('id', $id)->first();
         if (!empty($product)) {
             return $product;
         }
@@ -44,19 +44,19 @@ class Product extends Model
     //Insert data query
     public static function insertProductQuery($params)
     {
-        return DB::table('products')->insert($params);
+        return self::insert($params);
     }
 
     //Update data query
     public static function updateProductQuery($params, $id)
     {
-        return DB::table('products')->where('id', $id)->update($params);
+        return self::findProductById($id)->update($params);
     }
 
     //Delete product query
     public static function deleteProductQuery($id)
     {
-        return DB::table('products')->delete($id);
+        return self::table('products')->delete($id);
     }
 
     //Handle image upload
@@ -73,13 +73,13 @@ class Product extends Model
         }
     }
 
-    // get all product
+    // Get all product
     public static function getWithAllProducts()
     {
         $limit = request('limit', 30);
         $sort_by = request('sort_by', 'id');
         $sort_type = request('sort_type', 'desc');
-        $products = DB::table('products')->orderBy($sort_by, $sort_type)->paginate($limit);
+        $products = self::orderBy($sort_by, $sort_type)->paginate($limit);
         if ($products->count() >0) {
             return self::responseSuccessJson('success', $products);
         }
@@ -139,7 +139,7 @@ class Product extends Model
         }
     }
 
-    //delete product
+    //Delete product
     public static function deleteProduct($id)
     {
         try {

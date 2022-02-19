@@ -19,10 +19,10 @@ $router->get('/', function () use ($router) {
 
 $router->group(['prefix' => 'api/v1', 'middleware' => 'auth:api'], function () use ($router) {
     $router->get('/products', 'ProductController@index');
-    $router->get('/product/{id}', 'ProductController@show');
-    $router->post('/product', 'ProductController@store');
-    $router->post('/product/{id}', 'ProductController@update');
-    $router->delete('/product/{id}', 'ProductController@destroy');
+    $router->get('/products/{id}', 'ProductController@show');
+    $router->post('/products', 'ProductController@store');
+    $router->post('/products/{id}', 'ProductController@update');
+    $router->delete('/products/{id}', 'ProductController@destroy');
 });
 
 $router->post('/auth/register', 'AuthController@register');
