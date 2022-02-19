@@ -50,19 +50,19 @@ PASSPORT_CLIENT_SECRET= client_secert.
     /auth/login
 
     *show all products*
-    /api/v1/product - GET
+    /api/v1/products - GET
 
     *add new product*
-    /api/v1/product - POST
+    /api/v1/products - POST
 
     *show the product*
-    /api/v1/product/{id} - GET
+    /api/v1/products/{id} - GET
 
     *update the product*
-    /api/v1/product/{id} - POST
+    /api/v1/products/{id} - POST
 
     *delete*
-    /api/v1/product/{id} - DELETE
+    /api/v1/products/{id} - DELETE
     ```
 
 ## Official Documentation
